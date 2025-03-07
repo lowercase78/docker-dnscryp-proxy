@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 # Download and install dnscrypt-proxy
 RUN curl -Lo /tmp/dnscrypt-proxy.tar.gz "https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/${DNSCRYPT_PROXY_VERSION}/dnscrypt-proxy-linux_$TARGETARCH-${DNSCRYPT_PROXY_VERSION}.tar.gz" \
     && tar -xzf /tmp/dnscrypt-proxy.tar.gz -C /tmp \
-    && mv /tmp/linux-$TARGETARCH /usr/local/dnscrypt-proxy \
+    && mv /tmp/$(tar -tf /tmp/dnscrypt-proxy.tar.gz | head -1 | cut -f1 -d"/") /usr/local/dnscrypt-proxy \
     && rm /tmp/dnscrypt-proxy.tar.gz
 
 # Copy the configuration file

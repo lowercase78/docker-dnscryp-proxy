@@ -1,6 +1,6 @@
 ## Example configuration file for dnscrypt-proxy
 
-server_names = ['scaleway-fr', 'google']
+# server_names = ['scaleway-fr', 'google']
 
 listen_addresses = ['0.0.0.0:53', '[::]:53']
 
@@ -17,7 +17,7 @@ require_dnssec = false
 require_nolog = false
 require_nofilter = false
 
-fallback_resolvers = ['9.9.9.9:53', '1.1.1.1:53']
+fallback_resolvers = ['8.8.8.8:53', '4.2.2.4:53']
 
 log_files_max_size = 10
 log_files_max_age = 7
